@@ -44,15 +44,25 @@ for (const timer of document.querySelectorAll('.timer')) {
 }
 
 // Animation 
-$(".container1").hover(
-    function () {
-        $(this).find(".timer").fadeOut(200);
-        setTimeout(() => {
-            $(this).find(".buttons").css("display", "flex");
-        }, 200);
-    },
-    function () {
-        $(this).find(".timer").fadeIn(500);
-        $(this).find(".buttons").css("display", "none");
-    }
-);
+function buttonAnimation() {
+    $(".container1").hover(
+        function () {
+            $(this).find(".timer").fadeOut(200);
+            setTimeout(() => {
+                $(this).find(".buttons").css("display", "flex");
+            }, 200);
+        },
+        function () {
+            $(this).find(".timer").fadeIn(500);
+            $(this).find(".buttons").css("display", "none");
+        }
+    );
+}
+
+//  For smaller screen devices
+if (window.matchMedia('(max-width: 768px)').matches) {
+    $(".btn-grad").removeClass("fa-3x");
+} else {
+    $(".btn-grad").addClass("fa-3x");
+    buttonAnimation();
+}

@@ -39,9 +39,9 @@ body {
     content: '';
     position: absolute;
     top: calc(-1 * var(--borderWidth));
-    left: calc(-1 * var(--borderWidth));
+    /* left: calc(-1 * var(--borderWidth)); */
     height: calc(100% + var(--borderWidth) * 2);
-    width: calc(100% + var(--borderWidth) * 2);
+    width: 100%;
     background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
     z-index: -1;
     -webkit-animation: animatedgradient 3s ease alternate infinite;
@@ -161,4 +161,26 @@ body {
     background-position: right center;
     color: #fff;
     text-decoration: none;
+}
+
+.eachSection {
+    width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .btn-grad {
+        transition: 0.5s;
+        background-size: 200% auto;
+        border-radius: 10px;
+        display: block;
+        color: black;
+    }
+    .container1 {
+        margin: 5%;
+        margin-right: auto;
+    }
+    .buttons {
+        display: flex;
+    }
 }
