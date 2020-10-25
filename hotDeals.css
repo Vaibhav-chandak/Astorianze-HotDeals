@@ -1,0 +1,164 @@
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #fdb856;
+    background: linear-gradient(255deg, rgba(253, 184, 86, 1) 0, rgba(255, 248, 114, 1) 23%, rgba(65, 221, 253, 1) 100%);
+}
+
+.carousel {
+    margin-bottom: 5%;
+}
+
+.btn-grad {
+    margin: 10px;
+    padding: 10px;
+    transition: 0.5s;
+    background-size: 200% auto;
+    border-radius: 10px;
+    display: block;
+}
+
+.carousel-btn:hover .btn-grad {
+    background-position: right center;
+    box-shadow: 0 0 20px #eee;
+    background-image: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    color: #fff;
+    text-decoration: none;
+}
+
+.gradient-border {
+    --borderWidth: 15px;
+    background: #1D1F20;
+    position: relative;
+}
+
+.gradient-border:after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    z-index: -1;
+    -webkit-animation: animatedgradient 3s ease alternate infinite;
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%;
+}
+
+@-webkit-keyframes animatedgradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes animatedgradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container1 {
+    font-size: 13px;
+    margin: 2% 4%;
+    border-radius: 2rem;
+    box-shadow: 0 0 7px 0 rgba(0, 0, 0, 1);
+    width: auto;
+    text-align: center;
+    background-color: #6a097d;
+    transition: .5 ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.category-image {
+    width: 70%;
+    margin: 5% 2%;
+}
+
+.productHeading {
+    color: #d2d3c9;
+    font-size: 16px;
+    margin-bottom: 5%;
+}
+
+.description-div {
+    margin-top: auto;
+    margin-bottom: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.heading-div {
+    margin-bottom: 0;
+    margin-top: auto;
+}
+
+.image-div {
+    margin: auto;
+}
+
+.timer-item {
+    color: #d2d3c9;
+    display: inline-block;
+    font-size: 1rem;
+    list-style-type: none;
+    padding: 1em;
+    padding-bottom: .76em;
+    text-transform: uppercase;
+}
+
+.timer-item span {
+    display: block;
+    font-size: 1.5rem;
+}
+
+.timer {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.buttons {
+    display: none;
+    justify-content: center;
+    margin-bottom: 0;
+    margin-top: auto;
+}
+
+.hidden-btn {
+    background-image: linear-gradient(to right, #e52d27 0%, #b31217 51%, #e52d27 100%)
+}
+
+.hidden-btn {
+    margin: 5%;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: #d2d3c9;
+    box-shadow: 0 0 20px #eee;
+    display: inline-block;
+}
+
+.hidden-btn:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}

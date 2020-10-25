@@ -1,0 +1,55 @@
+ $(document).ready(function(){
+    $(window).resize(function(){
+        var w = $("body").width();
+        if(w<760){
+            $("#keyword").removeClass("keywordBlur");
+            $(".search-form").css({"z-index":-1}); 
+            $("#search-filter").hide(); 
+            $(".search-toggle").css({"display":"inline-table"});
+        }
+        else{
+            $("#keyword").addClass("keywordBlur");
+            $(".search-form").css({"z-index":10}); 
+            $(".search-toggle").css({"display":"none"});
+            if($("#search-filter").is(":visible")){
+                $("#keyword").removeClass("keywordBlur");
+            }
+        }
+    });
+    $(document).click(function(e){
+        var w = $("body").width();
+        if($(e.target).closest("#search-filter").length){
+            if($(e.target).is("#close-form")){ 
+                if($("#search-filter").is(":visible")){ 
+                    $("#search-filter").hide(); 
+                    $("#keyword").addClass("keywordBlur");
+                }
+                if(w<760){
+                    $("#keyword").addClass("keywordBlur");
+                    $(".search-form").css({"z-index":"-1"}); 
+                    $(".search-toggle").css({"display":"inline-table"});
+                }
+            }
+        }
+        else{ 
+            if($(e.target).closest(".search-form").length){
+                $("#keyword").removeClass("keywordBlur");
+                $("#search-filter").show();
+            }
+            else{
+                if($(e.target).is(".search-toggle") || $(e.target).closest(".search-toggle").length){
+                    $(".search-form").css({"z-index":10});
+                    $("#keyword").removeClass("keywordBlur");
+                }
+                else{
+                    $("#search-filter").hide();
+                    $("#keyword").addClass("keywordBlur");
+                    if(w<768){
+                        $(".search-form").css({"z-index":-1});
+                         $(".search-toggle").css({"display":"inline-table"});
+                    }
+                }
+            }
+        }
+    });
+});
